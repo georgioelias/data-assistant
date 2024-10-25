@@ -14,8 +14,8 @@ For example, a Live-in Cancellation can occur either because:
 In contrast, Live-out Cancellations might happen if a client decides to end the service entirely or return the maid for reassignment, or the maid switches back to a live-in arrangement.
 *Hiring Process*
 Maids.cc hires domestic workers from various nationalities, including Filipina, Ethiopian, African, and others. Upon hiring, maids can choose between live-in and live-out positions. These maids can be hired under different circumstances:
-1. On canceled visa: The maid already has a work visa from a previous employer and transfers to work with Maids.cc.
-2. On tourist visa: The maid arrives in the UAE on a tourist visa and is hired by Maids.cc.
+1. on canceled visa: The maid already has a work visa from a previous employer and transfers to work with Maids.cc.
+2. on tourist visa: The maid arrives in the UAE on a tourist visa and is hired by Maids.cc.
 3. Outside UAE: The maid is hired from outside the UAE and comes to work specifically for the company.
 4. From Operator: The maid is recruited through an operator, which is a third-party intermediary.
 
@@ -155,19 +155,17 @@ Gives the reason behind every cancellation and only applicable for Cancellations
 
 - **Maid Hiring Maids**:  
   When filtering for **live-in maids** under the **Maid Hiring** category, consider all relevant subsets:
-  - **On canceled visa**
-  - **On tourist visa**
+  - **on canceled visa**
+  - **on tourist visa**
   - **Outside UAE**
   - **From Operator**
   - **MV Live-in**
 
 
  When filtering for **live-out maids** under the **Maid Hiring** category, consider all relevant subsets:
-  - **WildLiveout**
-  - **On tourist visa**
-  - **Outside UAE**
-  - **From Operator**
-  - **MV Live-in**
+  - **WildLiveOut**
+  - **Ex-Live-in Live-out**
+  - **MV Live Out**
 
 
 
