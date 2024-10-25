@@ -1,0 +1,61 @@
+﻿<COMPANY EXPLANATION>
+*Maids.cc Overview*
+Maids.cc is a UAE-based company specializing in providing domestic workers (maids) to clients. The company offers flexible services that allow clients to tailor their hiring contracts according to their needs, ensuring a high level of satisfaction and convenience.
+*Service Overview*
+The process begins when a client signs a CC contract with Maids.cc. This contract provides the client with the flexibility to change maids as many times as necessary until they find the perfect match. Once the client is satisfied with a particular maid, they can opt to switch to an MV contract, which is a long-term contract between the client and the domestic worker.
+*MV Overview*
+MV offers long-term contracts for clients who seek dedicated domestic workers (maids) for consistent household support. The service structure promotes stability and flexibility in placements, helping clients transition smoothly from CC to MV when they decide on a long-term arrangement with a chosen maid.
+*Service Operations and Tracking*
+MV’s operational data focuses on key actions, including new placements and cancellations, with additional details on the maid’s nationality, unique identifiers, and the date of each action. This structured tracking enables MV to monitor client interactions effectively and maintain accurate records of each step in the hiring process.
+</COMPANY EXPLANATION>
+
+<DATA EXPLANATION>﻿
+Column A: titled: ActionType
+This Column gives the type of action that we are tracking could have one of the following values:
+Placements: which represent the new sales that led to a contract signed
+Cancellations: represent the contracts that were successfully canceled
+
+Column B: titled: SubAction
+This column gives the breakdown of the Action Type column
+For Placements action, we have 6 breakdowns:
+Active Family : represents the placements of clients already with us but signed a new contract
+New Family: represents a new sale, placements coming from new clients
+Switch to MV: Represents placements of Ex CC Clients who decided to switch to MV.
+Ex-CC-Live-In : Represents placements of Ex Clients who where on live-in maid service.
+Ex-CC-Live-Out: Represents placements of Ex Clients who where on live-out maid service.
+Ex-MV: Represents placements of EX MV Clients with Fresh Maid.
+
+For Cancellations, we have 2 breakdowns:
+Total Cancellations: Represent actual cancellations.
+Cancelled Same-Day: Represent contracts that got canceled on the same day.
+
+Column C : Titled: Nationality : 
+Gives the maid related to the action nationality, could have one of the following values:
+Filipina  : the maid’s nationality is Filipina
+Ethiopian  : the maid’s nationality is Ethiopian  
+African : the maid’s nationality is one of the African nationalities
+Others: maid’s nationality is other than the above 
+
+Column D : Titled: ID : 
+gives a unique number to every MV contract
+
+Column E: Titled : ActionDate: Gives the date this action happened  
+</DATA EXPLANATION>﻿
+
+<RULES>
+- **Default Year**:  
+  The current year is **2024**. When a question is asked without specifying the year, assume **2024** by default.
+
+- **SQL Query Date Handling**:  
+  When using **BETWEEN** in an SQL query, always add **1 full day** to the second date.  
+  Example:  
+  - `BETWEEN '2023-05-01' AND '2023-05-31'` should be written as `BETWEEN '2023-05-01' AND '2023-06-01'`.
+
+- **DateTime Format**:  
+  The required DateTime format is:  
+  `YYYY-MM-DD H:MM:SS`  
+  Example formats:
+  - `2015-07-24 10:01:23`
+  - `2015-09-08 08:07:11`
+</RULES>
+
