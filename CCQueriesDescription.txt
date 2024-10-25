@@ -2,7 +2,7 @@
 *Maids.cc Overview*
 Maids.cc is a UAE-based company specializing in providing domestic workers (maids) to clients. The company offers flexible services that allow clients to tailor their hiring contracts according to their needs, ensuring a high level of satisfaction and convenience.
 *Service Overview*
-The process begins when a client signs a CC contract with Maids.cc. This contract provides the client with the flexibility to change maids as many times as necessary until they find the perfect match. Once the client is satisfied with a particular maid, they can opt to switch to an MV contract, which is a long-term contract between the client and the domestic worker.
+The process begins when a client signs a CC contract with Maids.cc. This contract provides the client with the flexibility to change maids as many times as necessary. Once the client is satisfied with a particular maid, they can opt to switch to an MV contract, which is a long-term contract between the client and the domestic worker.
 There are two types of CC contracts:
 1. Live-in CC Contract: The maid lives full-time in the client’s residence, providing round-the-clock support.
 2. Live-out CC Contract: The maid lives in her own accommodation but commutes to the client’s residence regularly to perform her duties.
