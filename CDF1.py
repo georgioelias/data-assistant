@@ -21,7 +21,7 @@ MV_TABLE_NAME = "mv_data"
 
 DATA_OPTIONS = {
     "CC DATA": {
-        "csv_file": "CCDATAOCT19.csv",
+        "csv_file": "CCDATAOCTO19.csv",
         "explanation_file": "CCQueriesDescription.txt",
         "table_name": CC_TABLE_NAME
     },
