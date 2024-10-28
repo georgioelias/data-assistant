@@ -26,6 +26,7 @@ Cancellations:
             Cancelled Same-Day: Contracts canceled on the same day they were scheduled to terminate.
             Non-Same-Day Cancellation: Contracts canceled without a same-day termination.
             Signed by Mistake: Contracts canceled due to a signing error, not counted as an actual cancellation.
+	Still Scheduled : Contract that is not canceled yet, but scheduled for cancellation.
 
     Column C: Nationality - Specifies the maid’s nationality, with possible values:
         Filipina
