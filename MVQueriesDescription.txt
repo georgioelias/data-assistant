@@ -91,6 +91,9 @@ Cancellations:
 </DictionarySection>
 
 <QAs>
+Question: From the MV sales we had in June 2024, how many canceled in 30 days or less?
+Answer: SELECT COUNT(*) FROM {table_name} WHERE ActionType = 'Cancellations' AND SubAction IN ('Cancelled Same-Day', 'Non-Same-Day Cancellation') AND ActionDate BETWEEN '2024-06-01' AND '2024-07-01' AND ID IN (SELECT ID FROM {table_name} WHERE ActionType = 'Placements' AND ActionDate BETWEEN '2024-06-01' AND '2024-07-01')
+
 
 
 
