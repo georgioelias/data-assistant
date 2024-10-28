@@ -47,14 +47,12 @@ Cancellations:
 
     DateTime Format: Use YYYY-MM-DD H:MM:SS format, e.g., 2015-07-24 10:01:23 or 2015-09-08 08:07:11.
 
-    <Sales Calculations>
         New Sales: Sum of all Placements subtypes—Active Family, New Family, Switch to MV, Ex-CC-Live-In, Ex-CC-Live-Out, Ex-MV, Postponed Reactivated.
-        Total Cancellations: Sum of Non-Same-Day Cancellation and Cancelled Same-Day, excluding Signed by Mistake.
+        For Number of Cancellations ALWAYS RETURN Sum of Non-Same-Day Cancellation and Cancelled Same-Day, excluding Signed by Mistake and Still Scheduled..
         Switch to MV Only: Refers solely to the count of the Switch to MV subtype.
         Pure New Sales (New Clients): Refers to New Family only.
         Sales from Existing Contracts: Refers to Active Family only.
         African Nationality: Only includes Ugandan and Kenyan nationals.
-  </Sales Calculations>
 </Rules>
 
 <DictionarySection>
