@@ -1,61 +1,96 @@
-﻿<COMPANY EXPLANATION>
-*Maids.cc Overview*
-Maids.cc is a UAE-based company specializing in providing domestic workers (maids) to clients. The company offers flexible services that allow clients to tailor their hiring contracts according to their needs, ensuring a high level of satisfaction and convenience.
-*Service Overview*
-The process begins when a client signs a CC contract with Maids.cc. This contract provides the client with the flexibility to change maids as many times as necessary until they find the perfect match. Once the client is satisfied with a particular maid, they can opt to switch to an MV contract, which is a long-term contract between the client and the domestic worker.
-*MV Overview*
-MV offers long-term contracts for clients who seek dedicated domestic workers (maids) for consistent household support. The service structure promotes stability and flexibility in placements, helping clients transition smoothly from CC to MV when they decide on a long-term arrangement with a chosen maid.
-*Service Operations and Tracking*
-MV’s operational data focuses on key actions, including new placements and cancellations, with additional details on the maid’s nationality, unique identifiers, and the date of each action. This structured tracking enables MV to monitor client interactions effectively and maintain accurate records of each step in the hiring process.
-</COMPANY EXPLANATION>
+<CompanyExplanation>
+-Maids.cc is a UAE-based company specializing in providing domestic workers (maids) to clients. It offers flexible services that allow clients to customize their hiring contracts, ensuring high satisfaction and convenience.
+-The process begins when a client signs a CC contract with Maids.cc, allowing flexibility in selecting and changing maids until they find the ideal match. Once satisfied with a particular maid, clients can switch to an MV contract, a long-term arrangement between the client and the chosen domestic worker.
+-The MV service provides clients with dedicated, long-term household support. This structure promotes stability in placements and allows a seamless transition from CC to MV for long-term arrangements with the selected maid.
+-MV operations track key actions such as new placements and cancellations, recording details such as the maid’s nationality, unique contract IDs, and action dates. This structure supports efficient client interactions and accurate data monitoring throughout the hiring process.
+</CompanyExplanation>
 
-<DATA EXPLANATION>﻿
-Column A: titled: ActionType
-This Column gives the type of action that we are tracking could have one of the following values:
-Placements: which represent the new sales that led to a contract signed
-Cancellations: represent the contracts that were successfully canceled
+<DataExplanation>
+    Column A: ActionType - Tracks the type of action, with possible values:
+        Placements: New sales resulting in a signed contract.
+        Cancellations: Contracts that were successfully canceled.
 
-Column B: titled: SubAction
-This column gives the breakdown of the Action Type column
-For Placements action, we have 6 breakdowns:
-Active Family : represents the placements of clients already with us but signed a new contract
-New Family: represents a new sale, placements coming from new clients
-Switch to MV: Represents placements of Ex CC Clients who decided to switch to MV.
-Ex-CC-Live-In : Represents placements of Ex Clients who where on live-in maid service.
-Ex-CC-Live-Out: Represents placements of Ex Clients who where on live-out maid service.
-Ex-MV: Represents placements of EX MV Clients with Fresh Maid.
+    Column B: SubAction - Breakdown of ActionType:
+        Placements:
+            Active Family: New contract signed by existing clients.
+            New Family: New contract signed by new clients.
+            Switch to MV: Clients transitioning directly from CC to MV.
+            Ex-CC-Live-In: Clients who were previously on a live-in CC contract, canceled it, and after a period of time, signed a new contract under MV.
+            Ex-CC-Live-Out: Clients who were previously on a live-out CC contract, canceled it, and after a period of time, signed a new contract under MV.
+            Ex-MV: Former MV clients who canceled their previous MV contract and, after a period of time, signed a new MV contract with a different maid.
+            Postponed Reactivated: Contracts previously postponed, now reactivated as a new sale.
 
-For Cancellations, we have 2 breakdowns:
-Total Cancellations: Represent actual cancellations.
-Cancelled Same-Day: Represent contracts that got canceled on the same day.
+        
 
-Column C : Titled: Nationality : 
-Gives the maid related to the action nationality, could have one of the following values:
-Filipina  : the maid’s nationality is Filipina
-Ethiopian  : the maid’s nationality is Ethiopian  
-African : the maid’s nationality is one of the African nationalities
-Others: maid’s nationality is other than the above 
+Cancellations:
+            Cancelled Same-Day: Contracts canceled on the same day they were scheduled to terminate.
+            Non-Same-Day Cancellation: Contracts canceled without a same-day termination.
+            Signed by Mistake: Contracts canceled due to a signing error, not counted as an actual cancellation.
 
-Column D : Titled: ID : 
-gives a unique number to every MV contract
+    Column C: Nationality - Specifies the maid’s nationality, with possible values:
+        Filipina
+        Ethiopian
+        African: Refers only to Ugandan or Kenyan nationalities.
+        Others: Nationalities other than those listed above.
 
-Column E: Titled : ActionDate: Gives the date this action happened  
-</DATA EXPLANATION>﻿
+    Column D: ID - Unique identifier for each MV contract.
 
-<RULES>
-- **Default Year**:  
-  The current year is **2024**. When a question is asked without specifying the year, assume **2024** by default.
+    Column E: ActionDate - Date when the action occurred.
+</DataExplanation>
 
-- **SQL Query Date Handling**:  
-  When using **BETWEEN** in an SQL query, always add **1 full day** to the second date.  
-  Example:  
-  - `BETWEEN '2023-05-01' AND '2023-05-31'` should be written as `BETWEEN '2023-05-01' AND '2023-06-01'`.
+<Rules>
+    Default Year: The default year is 2024. Assume 2024 when no year is specified in questions.
 
-- **DateTime Format**:  
-  The required DateTime format is:  
-  `YYYY-MM-DD H:MM:SS`  
-  Example formats:
-  - `2015-07-24 10:01:23`
-  - `2015-09-08 08:07:11`
-</RULES>
+    SQL Query Date Handling: For BETWEEN statements, add 1 full day to the end date in SQL queries.
+        Example: BETWEEN '2023-05-01' AND '2023-06-01' (instead of '2023-05-31').
+
+    DateTime Format: Use YYYY-MM-DD H:MM:SS format, e.g., 2015-07-24 10:01:23 or 2015-09-08 08:07:11.
+
+    <Sales Calculations>
+        New Sales: Sum of all Placements subtypes—Active Family, New Family, Switch to MV, Ex-CC-Live-In, Ex-CC-Live-Out, Ex-MV, Postponed Reactivated.
+        Total Cancellations: Sum of Non-Same-Day Cancellation and Cancelled Same-Day, excluding Signed by Mistake.
+        Switch to MV Only: Refers solely to the count of the Switch to MV subtype.
+        Pure New Sales (New Clients): Refers to New Family only.
+        Sales from Existing Contracts: Refers to Active Family only.
+        African Nationality: Only includes Ugandan and Kenyan nationals.
+  </Sales Calculations>
+</Rules>
+
+<DictionarySection>
+<InstructionsForAIAgent>
+    The following list is a dictionary of technical terms used in the MV data prompt. For each term, alternative words or phrases that users may use instead of the given technical term are listed. These are grouped under each term to ensure the agent can understand and interpret questions correctly, even if users employ different language or terminology.
+</InstructionsForAIAgent>
+
+    Placements: Sales.
+
+    Cancellations: Terminations, Attritions.
+
+    Active Family: Active Clients, Active Contracts, Current Clients,  Active Sales.
+
+    New Family: New Clients, New Contracts, New Sales.
+
+    Switch to MV: CC to MV, Moved to MV Service, Canceled CC Contract to Switch to MV, CC Switch to MV, Converted to MV.
+
+    Ex-CC-Live-In:  Cancelled Live-in, Terminated CC Live-in.
+
+    Ex-CC-Live-Out: Cancelled Live-out, Terminated CC Live-out.
+
+    Ex-MV: Old MV, Cancelled Old MV, Previous Cancelled MV.
+
+    Postponed Reactivated: Postponed Contract, Postponed Sale.
+
+    Cancelled Same-Day: Scheduled today and canceled today.
+
+    Non-Same-Day Cancellation: Cancelled today, Scheduled before and canceled today
+
+    Signed by Mistake: Duplicated Unwanted Sales
+
+</DictionarySection>
+
+<QAs>
+
+
+
+
+</QAs>
 
