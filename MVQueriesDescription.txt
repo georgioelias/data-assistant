@@ -49,6 +49,9 @@ Cancellations:
 
     For Cancellations ALWAYS CONSIDER the total of Non-Same-Day Cancellation and Cancelled Same-Day, excluding Signed by Mistake and Still Scheduled.
 
+   Signed by Mistake and Still Scheduled are not Cancellations
+
+
         New Sales: Sum of all Placements subtypes—Active Family, New Family, Switch to MV, Ex-CC-Live-In, Ex-CC-Live-Out, Ex-MV, Postponed Reactivated.
         Switch to MV Only: Refers solely to the count of the Switch to MV subtype.
         Pure New Sales (New Clients): Refers to New Family only.
@@ -93,4 +96,5 @@ Cancellations:
 
 
 </QAs>
+
 
